@@ -53,7 +53,7 @@
     <distributionManagement>
         <snapshotRepository>
             <id>Femi-server</id>
-            <url>http://3.83.148.206:8081/repository/maven-snapshots/</url>
+            <url>http://3.92.62.144:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
