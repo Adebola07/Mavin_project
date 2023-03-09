@@ -15,6 +15,7 @@ def buildImage() {
 
 def deployApp() {
     echo 'deploying the application...'
+    echo 'My name is zamani'
 } 
 
 return this
