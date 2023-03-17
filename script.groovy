@@ -7,9 +7,9 @@ def buildJar() {
 def buildImage() {
     echo "what to do for you laidis..."
     withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh 'docker build -t adebola07/flaskapp:5.1 .'
+        sh 'docker build -t adebola07/flaskapp:5.2 .'
         sh 'echo $PASS | docker login -u $USER --password-stdin'
-        sh 'docker push adebola07/flaskapp:5.1'
+        sh 'docker push adebola07/flaskapp:5.2'
     }
 } 
 
