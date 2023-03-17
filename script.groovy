@@ -14,7 +14,7 @@ def buildImage() {
 } 
 
 def deployApp() {
-    echo 'deploying the application...'
+    echo 'deploying the application.'
     echo 'My name is 07zamani'
     echo "Yes we made it by God's grace"
 } 
