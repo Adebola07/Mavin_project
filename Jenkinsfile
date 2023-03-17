@@ -2,7 +2,7 @@ def gv
 
 pipeline {
     agent {
-        mynode
+       label 'mynode'
     } 
     tools {
         maven 'maven'
