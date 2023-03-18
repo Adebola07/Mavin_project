@@ -4,7 +4,7 @@ pipeline {
     agent {
        label 'mynode'
     } 
-    tool {
+    tools {
         maven 'maven'
     }
     stages {
