@@ -4,7 +4,9 @@ pipeline {
     agent {
        label 'mynode'
     } 
-    tool name: 'maven', type: 'maven'
+    tool {
+        maven 'maven'
+    }
     stages {
         stage("init") {
             steps {
