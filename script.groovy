@@ -14,9 +14,14 @@ def buildImage() {
 } 
 
 def deployApp() {
-    echo 'deploying the application.'
-    echo 'My name is 07zamani'
-    echo "Yes we made it by God's grace"
+    sshagent(['gitjen']) {
+        sh 'git config --global user.email 07zamani@gmail.com'
+        sh 'git config remote.origin.url git@github.com:Adebola07/Mavin_project.git'
+        sh 'git add .'
+        sh 'git commit -m "commit to git"'
+        sh 'git push origin HEAD:main'
+    }
+    
 }
 
 def incrementingVersion() {
