@@ -1,9 +1,7 @@
 def gv
 
 pipeline {
-    agent {
-       label 'mynode'
-    } 
+    agent any
     tools {
         maven 'maven'
     }
