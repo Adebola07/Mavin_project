@@ -7,9 +7,9 @@ def buildJar() {
 def buildImage() {
     echo "what to do for you laidis..."
     withCredentials([usernamePassword(credentialsId: 'nexus-cred', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh "docker build -t 3.87.55.131:8080/nexus_image:${imageId} ."
+        sh "docker build -t 3.87.55.131:8080/flaskapp:${imageId} ."
         sh 'echo $PASS | docker login -u $USER --password-stdin 3.87.55.131:8080'
-        sh "docker push 3.87.55.131:8080/nexus-image:${imageId}"
+        sh "docker push 3.87.55.131:8080/flaskapp:${imageId}"
     }
 } 
 
