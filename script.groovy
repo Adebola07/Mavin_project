@@ -15,8 +15,9 @@ def buildImage() {
 
 def deployApp() {
     sshagent(['gitjen']) {
-        sh 'git config --global user.email 07zamani@gmail.com'
         sh 'git config remote.origin.url git@github.com:Adebola07/Mavin_project.git'
+        sh 'git config --global user.email 07zamani@gmail.com'
+        sh 'git config --global user.name jenkins'
         sh 'git add .'
         sh 'git commit -m "commit to git"'
         sh 'git push origin HEAD:main'
