@@ -6,10 +6,10 @@ def buildJar() {
 
 def buildImage() {
     echo "what to do for you laidis..."
-    withCredentials([usernamePassword(credentialsId: 'nexus-cred', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh "docker build -t 34.207.191.12:8080/myapp:${imageId} ."
-        sh 'echo $PASS | docker login -u $USER --password-stdin 34.207.191.12:8080'
-        sh "docker push 34.207.191.12:8080/myapp:${imageId}"
+    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+        sh "docker build -t adebola07/flaskapp:${imageId} ."
+        sh 'echo $PASS | docker login -u $USER --password-stdin'
+        sh "docker push adebola07/flaskapp:${imageId}"
     }
 } 
 
