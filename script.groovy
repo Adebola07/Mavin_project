@@ -21,7 +21,7 @@ def deployApp() {
         sh 'git pull origin HEAD:main'
         sh 'git add .'
         sh 'git commit -m "commit to git"'
-        sh 'git push origin HEAD:main
+        sh 'git push origin HEAD:main'
     }
     
 }
