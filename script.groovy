@@ -7,14 +7,15 @@ def buildJar() {
 def buildImage() {
     echo "what to do for you laidis..."
     withCredentials([usernamePassword(credentialsId: 'nexus-cred', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh "docker build -t 3.87.55.131:8080/flaskapp:${imageId} ."
-        sh 'echo $PASS | docker login -u $USER --password-stdin 3.87.55.131:8080'
-        sh "docker push 3.87.55.131:8080/flaskapp:${imageId}"
+        sh "docker build -t 34.207.191.12:8080/flaskapp:${imageId} ."
+        sh 'echo $PASS | docker login -u $USER --password-stdin 34.207.191.12:8080'
+        sh "docker push 34.207.191.12:8080/flaskapp:${imageId}"
     }
 } 
 
 def deployApp() {
     sshagent(['gitjen']) {
+        sh 'ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts'
         sh 'git config remote.origin.url git@github.com:Adebola07/Mavin_project.git'
         sh 'git config --global user.email 07zamani@gmail.com'
         sh 'git config --global user.name jenkins'
